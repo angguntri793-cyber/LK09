@@ -23,15 +23,15 @@ Project ini merupakan aplikasi CRUD Perpustakaan Digital menggunakan Laravel Fra
 
 ## Screenshot 
 ### Halaman Utama
-![Halaman Utama](images/halamanutama.png)
+![Halaman Utama](images/halamanutama.jpg)
 ### Tambah Data Buku
-![Tambah Data Buku](images/tambah.png)
+![Tambah Data Buku](images/tambah.jpg)
 ### Edit Data Buku
-![Edit Data Buku](images/edit.png)
+![Edit Data Buku](images/edit.jpg)
 ### Upload Cover Buku
-![Upload Cover Buku](images/uploadcover.png)
-![Upload Cover Buku](images/uploadcoverr.png)
+![Upload Cover Buku](images/uploadcover.jpg)
+![Upload Cover Buku](images/uploadcoverr.jpg)
 ### Database
-![Database](images/database.png)
+![Database](images/database.jpg)
 
 
