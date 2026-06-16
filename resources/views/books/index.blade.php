@@ -4,9 +4,27 @@
 
 <div class="max-w-7xl mx-auto">
 
-    <h1 class="text-3xl font-bold mb-5">
-        Sistem Perpustakaan Digital
-    </h1>
+    <div class="flex justify-between items-center mb-5">
+        <div>
+            <h1 class="text-3xl font-bold">
+                Sistem Perpustakaan Digital
+            </h1>
+
+            @auth
+                <p class="text-gray-600 mt-1">
+                    Selamat datang, {{ Auth::user()->name }}
+                </p>
+            @endauth
+        </div>
+
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                Logout
+            </button>
+        </form>
+    </div>
 
     @if(session('success'))
         <div class="bg-green-200 text-green-800 p-3 rounded mb-4">
@@ -51,29 +69,12 @@
                     @endif
                 </td>
 
-                <td class="border p-2">
-                    {{ $book->title }}
-                </td>
-
-                <td class="border p-2">
-                    {{ $book->author }}
-                </td>
-
-                <td class="border p-2">
-                    {{ $book->publisher }}
-                </td>
-
-                <td class="border p-2">
-                    {{ $book->year }}
-                </td>
-
-                <td class="border p-2">
-                    {{ $book->category }}
-                </td>
-
-                <td class="border p-2">
-                    {{ $book->description }}
-                </td>
+                <td class="border p-2">{{ $book->title }}</td>
+                <td class="border p-2">{{ $book->author }}</td>
+                <td class="border p-2">{{ $book->publisher }}</td>
+                <td class="border p-2">{{ $book->year }}</td>
+                <td class="border p-2">{{ $book->category }}</td>
+                <td class="border p-2">{{ $book->description }}</td>
 
                 <td class="border p-2">
 
@@ -85,7 +86,6 @@
                     <form action="{{ route('books.destroy', $book->id) }}"
                           method="POST"
                           class="inline">
-
                         @csrf
                         @method('DELETE')
 
@@ -94,7 +94,6 @@
                                 onclick="return confirm('Hapus data?')">
                             Hapus
                         </button>
-
                     </form>
 
                 </td>
